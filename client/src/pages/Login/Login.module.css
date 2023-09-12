@@ -1,0 +1,41 @@
+.auth_wrapper{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.authentication_form{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #cbcccf93;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 3px #d1d7e093;
+    background-color: #fff;
+}
+.input{
+    border: solid 1px #d1d7e093;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.input:focus{
+    outline: none;
+}
+.button{
+    border: none;
+    background-color: teal;
+    padding: 8px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.link{
+    margin-top: 20px;
+    color: #2563eb;
+    font-weight: 600;
+}
+.register_label{
+    color: #928f8f;
+}

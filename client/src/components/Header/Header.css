@@ -1,0 +1,31 @@
+.slider_wrapper .slick-track{
+    display: flex !important;
+}
+
+.single_slider {
+    position: relative;
+    width: 80%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.single_slider img {
+    width: 100%;
+}
+
+.single_slider .slider_content {
+    color: #fff;
+}
+svg.slick-arrow.slick-next {
+    right: 25px;
+    z-index: 1;
+    color: #fff;
+}
+
+svg.slick-arrow.slick-prev {
+    left: 25px;
+    color: #fff;
+    z-index: 1;
+}
