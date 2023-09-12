@@ -10,7 +10,7 @@ client/.pnp
 serve/.pnp
 
 # public
-/public/*
+public/*
 # testing
 /coverage
 client/coverage
