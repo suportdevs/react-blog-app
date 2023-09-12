@@ -4,9 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-client/node_modules
+/client/node_modules
 client/.pnp
-serve/node_modules
+/serve/node_modules
 serve/.pnp
 
 # testing
@@ -22,8 +22,8 @@ server/build
 # misc
 .DS_Store
 .env.local
-./client/.env
-./server/.env
+/client/.env
+/server/.env
 .env.development.local
 .env.test.local
 .env.production.local
