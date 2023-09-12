@@ -1,0 +1,19 @@
+.main_overlay{
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(2px);
+    background: #fff;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.main_overlay.active {
+    opacity: 0.6;
+    visibility: visible;
+}

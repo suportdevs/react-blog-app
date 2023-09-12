@@ -8,7 +8,7 @@ import Protected from "./components/Protected/Protected";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import CreateCategory from "./pages/Category/CreateCategory";
 import PostEdit from "./pages/PostEdit/PostEdit";
-
+import './App.css';
 const router = createBrowserRouter([
   {
     path: "/",

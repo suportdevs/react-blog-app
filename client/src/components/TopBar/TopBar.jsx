@@ -1,13 +1,20 @@
 import classes from "./TopBar.module.css"
-import { FaSquareFacebook, FaSquareTwitter, FaLinkedin, FaMagnifyingGlass, FaArrowRightFromBracket, FaFileInvoice, FaSitemap, FaTags } from "react-icons/fa6";
+import { FaSquareFacebook, FaSquareTwitter, FaLinkedin, FaMagnifyingGlass, FaAlignCenter, FaFileInvoice, FaSitemap, FaTags, FaAngleDown } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
 import toast, {Toaster} from "react-hot-toast";
 import Cookies from "universal-cookie";
 import { useState } from "react";
+import Canvas from "../Canvas/Canvas";
+import Overlay from "../Overlay/Overlay";
 const cookies = new Cookies();
 
 function TopBar() {
     const [dropdownMenu, setDropdownMenu] = useState(false);
+    const [canvasOpen, setCanvasOpen] = useState(false);
+    const [overlay, setOverlay] = useState(false);
+    const handleOverlay = (event) => {
+        setOverlay(!overlay);
+    }
     const hangleLogout = async (e) => {
         e.preventDefault();
         cookies.remove('TOKEN');
@@ -18,23 +25,18 @@ function TopBar() {
             toast("Something went wrong!");
         }
     }
-    const hangleDropdownMenu = (event) => {
-        setDropdownMenu(!dropdownMenu);
-    }
     return (
         <>
         <div className={classes.topbar}>
             <div className={classes.leftbar}>
-                <FaSquareFacebook className={classes.topLeftIcon}/>
-                <FaSquareTwitter className={classes.topLeftIcon}/>
-                <FaLinkedin className={classes.topLeftIcon}/>
+                <Link to="/"><h2>BLOG</h2></Link>
             </div>
             <div className={classes.centerbar}>
                 <ul className={classes.topMenu}>
-                    <li className={classes.menu_item} onClick={hangleDropdownMenu}><Link to="/">Home</Link></li>
-                    <li className={classes.menu_item} onClick={hangleDropdownMenu}><Link to="/contact">Contact</Link></li>
-                    <li className={classes.menu_item} onClick={hangleDropdownMenu}><Link to="/about">About</Link></li>
-                    <li className={classes.menu_item} onClick={hangleDropdownMenu}><Link >Blog</Link>
+                    <li className={classes.menu_item} ><Link to="/">Home</Link></li>
+                    <li className={classes.menu_item} ><Link to="/contact">Contact</Link></li>
+                    <li className={classes.menu_item} ><Link to="/about">About</Link></li>
+                    <li className={classes.menu_item} onClick={(e) => setDropdownMenu(!dropdownMenu)}><Link >Blog </Link><FaAngleDown />
                         <div className={dropdownMenu ? `${classes.dropdown_menu} ${classes.dropdown_active}` : `${classes.dropdown_menu}`}>
                             <Link to="post"><FaFileInvoice className={classes.dropdown_menu_item_icon} /> Posts</Link>
                             <Link to="post"><FaSitemap className={classes.dropdown_menu_item_icon} /> Categories</Link>
@@ -44,13 +46,19 @@ function TopBar() {
                 </ul>
             </div>
             <div className={classes.rightbar}>
+            <FaSquareFacebook className={classes.rightSearchIcon}/>
+                <FaSquareTwitter className={classes.rightSearchIcon}/>
+                <FaLinkedin className={classes.rightSearchIcon}/>
+                <FaMagnifyingGlass className={classes.rightSearchIcon}/>
+                <FaAlignCenter className={classes.rightSearchIcon} onClick={() => setCanvasOpen(!canvasOpen)}/>
                 <div>
                     <img className={classes.topImg} src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" />
                 </div>
-                <FaMagnifyingGlass className={classes.rightSearchIcon}/>
-                <FaArrowRightFromBracket className={classes.rightSearchIcon} onClick={hangleLogout}/>
+                {/* <FaArrowRightFromBracket className={classes.rightSearchIcon} onClick={hangleLogout}/> */}
             </div>
         </div>
+        <Overlay overlay={overlay || canvasOpen}/>
+        <Canvas canvasOpen={canvasOpen} setCanvasOpen={setCanvasOpen} handleOverlay={handleOverlay} overlay={overlay} />
         <Outlet />
         <Toaster />
         </>
