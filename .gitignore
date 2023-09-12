@@ -26,6 +26,7 @@ client/.env
 ./server/.env
 server/.env
 /server/.env
+/server/.server.js
 .env.development.local
 .env.test.local
 .env.production.local
