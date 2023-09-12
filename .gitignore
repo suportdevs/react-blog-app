@@ -9,7 +9,7 @@ client/.pnp
 /server/node_modules
 serve/.pnp
 
-public/
+public
 # testing
 /coverage
 client/coverage
