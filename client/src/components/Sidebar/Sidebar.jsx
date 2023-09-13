@@ -13,7 +13,7 @@ function Sidebar({posts, categories}){
                 </div>
                 {
                     posts && posts?.map(post => (
-                    <div className={classes.single_widget_content}>
+                    <div className={classes.single_widget_content} key={post._id}>
                         <div className={classes.widget_post}>
                             <div className={classes.widget_post_thumb}>
                                 <Link to={`post/${post._id}`}>
@@ -40,7 +40,7 @@ function Sidebar({posts, categories}){
                 <div className={classes.single_widget_content}>
                     <ul className={classes.list}>
                         {categories && categories?.map(category => (
-                            <li className={classes.list_item} key={category._id}><a href="">{category.name}</a><span>(10)</span></li>
+                            <li className={classes.list_item} key={category._id}><a href="">{category.name}</a><span>({category.postCount})</span></li>
                         ))}
                     </ul>
                 </div>

@@ -3,8 +3,7 @@ import Slider from "react-slick";
 import "./Header.css";
 import heroImage from "./hero_bg.png";
 import {FaArrowLeft, FaArrowRight} from "react-icons/fa6";
-// import "~slick-carousel/slick/slick.css"; 
-// import "~slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 function Header({sliders}){
   const BACKEND_ROOT_URL = process.env.REACT_APP_BACKEND_URL;
@@ -27,11 +26,12 @@ function Header({sliders}){
           <Slider {...settings} className="slider_wrapper">
             {
               sliders && sliders?.map(slider => (
-                <div>
+                <div key={slider._id}>
                 <div className="single_slider">
                   <div className="slider_content">
                       <h1>{slider.title}</h1>
                       <p dangerouslySetInnerHTML={{ __html: slider.content.slice(0, 50).concat('…') }}></p>
+                  <Link to={`post/${slider._id}`} className="read-more">More</Link>
                   </div>
                   <div className="slider_image">
                       <img src={`${BACKEND_ROOT_URL}/media/${slider.featured_image}`} alt={slider.title} />

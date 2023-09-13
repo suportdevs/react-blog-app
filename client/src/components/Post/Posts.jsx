@@ -26,8 +26,7 @@ function Posts({posts, isLoading, isFetching, isError}) {
     }
     const indexOfFirstItem = ((currentPage - (pageNumberLimit / 2)) <= 0) ? 1 : currentPage - (pageNumberLimit / 2);
     const indexOfLastItem = currentPage + (pageNumberLimit / 2);
-    console.log(indexOfFirstItem);
-    console.log(indexOfLastItem);
+    
     const currentItems = posts?.slice(indexOfFirstItem, indexOfLastItem);
     
     const handlePaginatePage = (event) => {
@@ -52,7 +51,7 @@ function Posts({posts, isLoading, isFetching, isError}) {
     return(
         <article className={classes.post_content_wrapper}>
             <div className={classes.post_content_area}>
-                {post ?? currentItems.map((post) => (<Post post={post}/>))}
+                {post ?? currentItems.map((post) => (<Post post={post} key={post._id}/>))}
             </div>
             <ul className={classes.pagination_list}>
                 <li className={classes.pagination_list_item} onClick={handlePreviousBtn} >

@@ -36,7 +36,7 @@ function TopBar() {
                     <li className={classes.menu_item} ><Link to="/">Home</Link></li>
                     <li className={classes.menu_item} ><Link to="/contact">Contact</Link></li>
                     <li className={classes.menu_item} ><Link to="/about">About</Link></li>
-                    <li className={classes.menu_item} onClick={(e) => setDropdownMenu(!dropdownMenu)}><Link >Blog </Link><FaAngleDown />
+                    <li className={classes.menu_item} onClick={(e) => setDropdownMenu(!dropdownMenu)}>Blog <FaAngleDown />
                         <div className={dropdownMenu ? `${classes.dropdown_menu} ${classes.dropdown_active}` : `${classes.dropdown_menu}`}>
                             <Link to="post"><FaFileInvoice className={classes.dropdown_menu_item_icon} /> Posts</Link>
                             <Link to="post"><FaSitemap className={classes.dropdown_menu_item_icon} /> Categories</Link>

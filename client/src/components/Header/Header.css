@@ -29,3 +29,11 @@ svg.slick-arrow.slick-prev {
     color: #fff;
     z-index: 1;
 }
+.read-more {
+    padding: 7px 15px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #FE4F70;
+    margin-top: 15px;
+    display: inline-block;
+}

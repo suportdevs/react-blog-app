@@ -3,7 +3,23 @@ const Category = require("../models/Category");
 
 async function getCategory (req, res){
     try{
-        const categories = await Category.find();
+        const categories = await Category.aggregate([
+            {
+              $lookup: {
+                from: 'posts',
+                localField: '_id',
+                foreignField: 'category',
+                as: 'posts',
+              },
+            },
+            {
+              $project: {
+                _id: 1,
+                name: 1,
+                postCount: { $size: '$posts' },
+              },
+            },
+          ]);
         return res.status(200).send(categories);
     }catch(error){
         return res.status(500).send({message:error});

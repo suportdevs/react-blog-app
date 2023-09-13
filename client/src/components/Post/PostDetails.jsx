@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useGetSinglePostQuery, usePostDeleteMutation } from "../../services/webSlice";
 import { FaRegCalendarDays, FaRegEye, FaRegComments, FaRegThumbsUp, FaRegPenToSquare, FaRegTrashCan } from "react-icons/fa6";
 import { toast } from "react-hot-toast";
+import timeFormatter from "../../utilies/timeFormatter";
 
 export default function PostDetails({id}){
     const BACKEND_ROOT_URL = process.env.REACT_APP_BACKEND_URL;
@@ -27,7 +28,7 @@ export default function PostDetails({id}){
                     <ul className={classes.meta}>
                         <li className={classes.meta_item}> <a href=""><img src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" /> <span>{post.author?.username}</span></a></li>
                         <li  className={classes.meta_item}><a href="">{post.category && post.category.name}</a></li>
-                        <li  className={classes.meta_item}><a href=""><FaRegCalendarDays /> {new Date(post.createdAt).toDateString()}</a></li>
+                        <li  className={classes.meta_item}><a href=""><FaRegCalendarDays /> {timeFormatter(post.createdAt)}</a></li>
                         <li  className={classes.meta_item}><a href=""><FaRegComments /> 2000</a></li>
                         <li  className={classes.meta_item}><a href=""><FaRegEye /> 2000</a></li>
                         <li  className={classes.meta_item}><a href=""><FaRegThumbsUp /> 2000</a></li>
