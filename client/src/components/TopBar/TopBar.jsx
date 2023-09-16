@@ -1,5 +1,6 @@
 import classes from "./TopBar.module.css"
 import { FaSquareFacebook, FaSquareTwitter, FaLinkedin, FaMagnifyingGlass, FaAlignCenter, FaFileInvoice, FaSitemap, FaTags, FaAngleDown } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
 import { Link, Outlet } from "react-router-dom";
 import toast, {Toaster} from "react-hot-toast";
 import Cookies from "universal-cookie";
@@ -9,6 +10,9 @@ import Overlay from "../Overlay/Overlay";
 const cookies = new Cookies();
 
 function TopBar() {
+    const user = useSelector((state) => state.user);
+    console.log(user)
+
     const [dropdownMenu, setDropdownMenu] = useState(false);
     const [canvasOpen, setCanvasOpen] = useState(false);
     const [overlay, setOverlay] = useState(false);
@@ -36,7 +40,7 @@ function TopBar() {
                     <li className={classes.menu_item} ><Link to="/">Home</Link></li>
                     <li className={classes.menu_item} ><Link to="/contact">Contact</Link></li>
                     <li className={classes.menu_item} ><Link to="/about">About</Link></li>
-                    <li className={classes.menu_item} onClick={(e) => setDropdownMenu(!dropdownMenu)}>Blog <FaAngleDown />
+                    <li className={classes.menu_item} onClick={(e) => setDropdownMenu(!dropdownMenu)}>Blog <FaAngleDown className={classes.icon} />
                         <div className={dropdownMenu ? `${classes.dropdown_menu} ${classes.dropdown_active}` : `${classes.dropdown_menu}`}>
                             <Link to="post"><FaFileInvoice className={classes.dropdown_menu_item_icon} /> Posts</Link>
                             <Link to="post"><FaSitemap className={classes.dropdown_menu_item_icon} /> Categories</Link>
@@ -51,9 +55,9 @@ function TopBar() {
                 <FaLinkedin className={classes.rightSearchIcon}/>
                 <FaMagnifyingGlass className={classes.rightSearchIcon}/>
                 <FaAlignCenter className={classes.rightSearchIcon} onClick={() => setCanvasOpen(!canvasOpen)}/>
-                <div>
+                {/* <div> */}
                     <img className={classes.topImg} src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" />
-                </div>
+                {/* </div> */}
                 {/* <FaArrowRightFromBracket className={classes.rightSearchIcon} onClick={hangleLogout}/> */}
             </div>
         </div>

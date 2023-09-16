@@ -11,6 +11,9 @@
     margin-bottom: 30px;
     background-color: #fff;
 }
+.single_widget h4{
+    color: #203656;
+}
 .single_sidebar_title{
     text-align: center;
 }

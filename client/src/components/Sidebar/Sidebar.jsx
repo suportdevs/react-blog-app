@@ -24,7 +24,7 @@ function Sidebar({posts, categories}){
                             </div>
                             <div className={classes.widget_post_details}>
                                 <Link to={`post/${post._id}`}>
-                                <h3>{post.title}</h3>
+                                <h4>{post.title}</h4>
                                 </Link>
                                 <p>{timeFormatter(post.createdAt) }</p>
                             </div>

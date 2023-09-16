@@ -16,23 +16,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Protected><Home /></Protected>,
+        element: <Home />,
       },
       {
         path: "post/:id",
-        element: <Protected><SinglePost /></Protected>,
+        element: <SinglePost />,
       },
       {
         path: "create-post",
-        element: <CreatePost />,
+        element: <Protected><CreatePost /></Protected>,
       },
       {
         path: "post/edit/:id",
-        element: <PostEdit />,
+        element: <Protected><PostEdit /></Protected>,
       },
       {
         path: "create-category",
-        element: <CreateCategory />,
+        element: <Protected><CreateCategory /></Protected>,
       },
       
     ],

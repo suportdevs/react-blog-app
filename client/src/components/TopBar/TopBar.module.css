@@ -6,7 +6,7 @@
     top: 0;
     z-index: 2;
     background-color: #ffffffc0;
-    padding: 5px 0;
+    padding: 10px 0;
     backdrop-filter: saturate(180%) blur(5px);
     -webkit-backdrop-filter: saturate(180%) blur(5px);
 }
@@ -29,6 +29,9 @@
     padding: 0;
     list-style: none;
     justify-content: center;
+}
+.topMenu .icon{
+    font-size: 12px;
 }
 .menu_item{
     position: relative;
