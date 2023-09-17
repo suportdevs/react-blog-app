@@ -7,10 +7,14 @@ import Cookies from "universal-cookie";
 import { useState } from "react";
 import Canvas from "../Canvas/Canvas";
 import Overlay from "../Overlay/Overlay";
+// import { getCurrentUser } from "../../services/reducer";
 const cookies = new Cookies();
 
 function TopBar() {
-    const user = useSelector((state) => state.user);
+    const token = cookies.get('token');
+    // getCurrentUser(token);
+    const user = useSelector((state) => state.userApi);
+
     console.log(user)
 
     const [dropdownMenu, setDropdownMenu] = useState(false);
@@ -21,8 +25,8 @@ function TopBar() {
     }
     const hangleLogout = async (e) => {
         e.preventDefault();
-        cookies.remove('TOKEN');
-        if(typeof cookies.get('TOKEN') === "undefined"){
+        cookies.remove('token');
+        if(typeof cookies.get('token') === "undefined"){
             toast("Logout successfull");
             window.location.href = '/login';
         }else{

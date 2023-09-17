@@ -1,22 +1,17 @@
 import {createSlice } from "@reduxjs/toolkit";
-import Cookies from "universal-cookies";
-const cookies = new Cookies();
 
-const token = cookies.get('token');
-console.log(token);
 const initialState = {
     user: {}
 }
-
+console.log(initialState)
 const userSlice = createSlice({
     name: "userApi",
     initialState,
     reducers: {
-        createUser: (state) => {
-
-        },
+        getCurrentUser: (state, action) => {
+            return state.user = action.payload;
+        }
     }
 });
-
-export const {createUser} = userSlice;
+export const {getCurrentUser} = userSlice.actions;
 export default userSlice;
