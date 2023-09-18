@@ -1,17 +1,17 @@
 import {createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    user: {}
+    user: null,
 }
-console.log(initialState)
 const userSlice = createSlice({
     name: "userApi",
     initialState,
     reducers: {
-        getCurrentUser: (state, action) => {
-            return state.user = action.payload;
-        }
+        setCurrentUser: (state, action) => {
+            // Use proper immutability here
+            state.user = action.payload;
+          },
     }
 });
-export const {getCurrentUser} = userSlice.actions;
+export const {setCurrentUser} = userSlice.actions;
 export default userSlice;

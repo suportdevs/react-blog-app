@@ -4,9 +4,15 @@ import { useLoginUserMutation } from "../../services/authSlice";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Cookies from "universal-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentUser } from "../../services/reducer";
 const cookies = new Cookies();
 
 export default function Login(){
+
+    const user = useSelector((state) => state);
+    console.log(user)
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginUser, responseinfo] = useLoginUserMutation();
@@ -30,7 +36,8 @@ export default function Login(){
         if (responseinfo.data.token) {
             defaultHeaders.append("Authorization", `Bearer ${responseinfo.data.token}`);
         }
-        window.location.href = "/";
+        dispatch(setCurrentUser(responseinfo.data.token))
+        // window.location.href = "/";
     }
 
     return(        

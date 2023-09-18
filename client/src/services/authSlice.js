@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import { setCurrentUser } from "./reducer";
 
 const BASE_URL = 'http://localhost:8000/';
 export const authApi = createApi({
@@ -20,6 +21,13 @@ export const authApi = createApi({
                 body: credentials,
             }),
             invalidatesTags: ['Users'],
+            onSuccess: (result, variables, context) => {
+                console.log('res' + result)
+                console.log('var' + variables)
+                console.log('con' + context)
+                // Dispatch the setUser action with the user data from the response
+                context.dispatch(setCurrentUser(result.data.user));
+              },
         }),
         logoutUser: builder.mutation({
             query: () => ({

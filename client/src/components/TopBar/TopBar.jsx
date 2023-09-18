@@ -13,7 +13,7 @@ const cookies = new Cookies();
 function TopBar() {
     const token = cookies.get('token');
     // getCurrentUser(token);
-    const user = useSelector((state) => state.userApi);
+    const user = useSelector((state) => state);
 
     console.log(user)
 
