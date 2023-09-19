@@ -18,7 +18,18 @@ function Header({sliders}){
         autoplay: true,
         speed: 2000,
         autoplaySpeed: 5000,
-        cssEase: "linear"
+        cssEase: "linear",
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 1,
+              margin: 0,
+            }
+          },
+        ],
       };
       return (
         // background-repeat: no-repeat;background-image: url(&quot;/static/media/hero_bg.daaa9b02c54bbdddccbc.png&quot;);object-fit: cover;background-size: cover;background-position: center center;

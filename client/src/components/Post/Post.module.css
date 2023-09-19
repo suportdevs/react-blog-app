@@ -80,3 +80,20 @@
     transition: all 0.3s ease-in-out;
 }
 
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .single_post_content{
+        flex-direction: column;
+    }
+    .single_post_content_area{
+        padding: 10px;
+    }
+    .post_thumb{
+        flex: 0;
+        width: 100%;
+    }
+    .widget_post_thumb{
+        max-width: 100%;
+        max-height: auto;
+    }
+}

@@ -13,6 +13,8 @@ import verifyCurrentUser from "./utilies/verifyCurrentUser";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./services/reducer";
+import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
 
 
 const router = createBrowserRouter([
@@ -53,7 +55,21 @@ const router = createBrowserRouter([
   },
   {
     path: '/contact',
-    element: <CreatePost />,
+    element: <TopBar/>,
+    children:[
+      {path: '',
+      element: <Contact />,}
+    ],
+  },
+  {
+    path: '/about',
+    element: <TopBar/>,
+    children:[
+      {
+        path: '',
+      element: <About />,
+    }
+    ],
   }
 ]);
 

@@ -1,5 +1,5 @@
 .post_content_wrapper{
-    flex: 9;
+    flex: 7;
     padding: 0 15px;
     flex-wrap: wrap;
     flex-direction: row;
@@ -84,4 +84,18 @@
 }
 .post_title_icon:last-child{
     color: tomato;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .post_content_wrapper{
+        padding: 0;
+    }
+    .post_content_area{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .post_detials{
+        margin: 0;
+    }
 }

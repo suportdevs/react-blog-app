@@ -1,8 +1,14 @@
 .post_details_wrapper{
-    width: 100%;
+    width: 90%;
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
     margin: 0 auto;
     margin-top: 50px;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px){
+    .post_details_wrapper{
+        flex-direction: column;
+    }
 }

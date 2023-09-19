@@ -110,3 +110,29 @@
     content: "";
     display: none;
 }
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .widget_wrapper{
+        flex: 0;
+        padding: 0;
+    }
+    .single_widget{
+        padding: 10px;
+    }
+    .post_details_wrapper .widget_wrapper{
+        padding: 15px;
+    }
+    .widget_post{
+        flex-direction: column;
+    }
+    .widget_post_thumb{
+        max-width: none;
+        max-height: none;
+    }
+    .widget_post_thumb_inner{
+        border-radius: 5px;
+    }
+    .widget_post_thumb_inner img{
+        height: auto;
+    }
+}

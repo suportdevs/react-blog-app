@@ -51,3 +51,15 @@
     color: #fff;
     background-color: #FE4F70;
 }
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .content_wrapper{
+        flex-direction: column;
+    }
+    .post_content_wrapper{
+        padding: 0;
+    }
+    .post_content_area{
+        padding: 0;
+    }
+}

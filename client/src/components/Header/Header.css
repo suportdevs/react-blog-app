@@ -47,6 +47,7 @@ svg.slick-arrow.slick-prev {
 @media screen and (max-width: 600px) {
     .single_slider{
         flex-direction: column-reverse;
+        padding: 10px 0;
     }
     .single_slider h1{
         font-size: 20px;

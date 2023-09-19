@@ -1,5 +1,5 @@
 import classes from "./TopBar.module.css"
-import { FaSquareFacebook, FaSquareTwitter, FaLinkedin, FaMagnifyingGlass, FaAlignCenter, FaFileInvoice, FaSitemap, FaTags, FaAngleDown } from "react-icons/fa6";
+import { FaSquareFacebook, FaSquareTwitter, FaLinkedin, FaMagnifyingGlass, FaAlignCenter, FaFileInvoice, FaSitemap, FaTags, FaAngleDown, FaArrowRightFromBracket, FaRegUser } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
 import { Link, Outlet } from "react-router-dom";
 import toast, {Toaster} from "react-hot-toast";
@@ -11,8 +11,8 @@ const cookies = new Cookies();
 
 function TopBar() {
     const user = useSelector((state) => state.user.user);
-
     const [dropdownMenu, setDropdownMenu] = useState(false);
+    const [userDropdown, setUserDropdown] = useState(false);
     const [canvasOpen, setCanvasOpen] = useState(false);
     const [overlay, setOverlay] = useState(false);
     const handleOverlay = (event) => {
@@ -62,8 +62,19 @@ function TopBar() {
                 <FaLinkedin className={classes.rightSearchIcon}/>
                 <FaMagnifyingGlass className={classes.rightSearchIcon}/>
                 <FaAlignCenter className={classes.rightSearchIcon} onClick={() => setCanvasOpen(!canvasOpen)}/>
-                <img className={classes.topImg} src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" />
-                {/* <FaArrowRightFromBracket className={classes.rightSearchIcon} onClick={hangleLogout}/> */}
+                {
+                    user ? (
+                        <>
+                        <span className={classes.user_avatar}>
+                        <img className={classes.topImg} src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" onClick={(e) => setUserDropdown(!userDropdown)}/>
+                        <div className={userDropdown ? `${classes.dropdown_menu} ${classes.dropdown_active}` : `${classes.dropdown_menu}`}>
+                                <Link to="/profile" ><FaRegUser className={classes.dropdown_menu_item_icon} /> Profile</Link>
+                                <Link onClick={hangleLogout} ><FaArrowRightFromBracket className={classes.dropdown_menu_item_icon} /> Logout</Link>
+                            </div>
+                        </span>
+                        </>
+                    ) : ''
+                }
             </div>
         </div>
         <Overlay overlay={overlay || canvasOpen}/>
