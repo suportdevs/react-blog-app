@@ -36,8 +36,8 @@ export default function Login(){
         if (responseinfo.data.token) {
             defaultHeaders.append("Authorization", `Bearer ${responseinfo.data.token}`);
         }
-        dispatch(setCurrentUser(responseinfo.data.token))
-        // window.location.href = "/";
+        dispatch(setCurrentUser(responseinfo.data.userData))
+        window.location.href = "/";
     }
 
     return(        

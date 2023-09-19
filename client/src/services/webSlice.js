@@ -36,9 +36,7 @@ export const webApi = createApi({
             query: (id) => ({url: `post?id=${id}`}),
         }),
         updatePost: builder.mutation({
-            query: ({id, postObj}) => (
-                console.log(id, postObj),
-                {
+            query: ({id, postObj}) => ({
                 url: `post/${id}`,
                 method: 'PUT',
                 body: postObj,

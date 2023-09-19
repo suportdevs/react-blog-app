@@ -35,14 +35,13 @@ async function login(req, res){
         if(!match) return res.status(400).send({
               message: "Passwords do not match!"
             });
-
+        const userData = {
+            userId: user._id,
+            userName: user.username,
+            userEmail: user.email
+          };
         // create a jwt token
-        const token = jwt.sign(
-            {
-              userId: user._id,
-              userName: user.username,
-              userEmail: user.email
-            },
+        const token = jwt.sign(userData,
             process.env.JWT_SECRET,
             { expiresIn: '24h' }
           );
@@ -50,7 +49,8 @@ async function login(req, res){
           return res.status(200).send({
             message: "Login successful.",
             email: user.email,
-            token
+            token,
+            userData
           });
     }catch(error){
         return res.status(500).send({message: "An error occurred!", error});

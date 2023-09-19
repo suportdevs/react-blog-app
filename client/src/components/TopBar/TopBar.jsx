@@ -13,9 +13,9 @@ const cookies = new Cookies();
 function TopBar() {
     const token = cookies.get('token');
     // getCurrentUser(token);
-    const user = useSelector((state) => state);
+    const user = useSelector((state) => state.user);
 
-    console.log(user)
+    console.log(user.user.userId)
 
     const [dropdownMenu, setDropdownMenu] = useState(false);
     const [canvasOpen, setCanvasOpen] = useState(false);

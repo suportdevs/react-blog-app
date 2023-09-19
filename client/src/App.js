@@ -9,6 +9,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import CreateCategory from "./pages/Category/CreateCategory";
 import PostEdit from "./pages/PostEdit/PostEdit";
 import './App.css';
+import verifyCurrentUser from "./utilies/verifyCurrentUser";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "./services/reducer";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +58,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch =useDispatch();
+  const currentUser = verifyCurrentUser();
+  useEffect(() => {
+    dispatch(setCurrentUser(currentUser));
+  }, [currentUser]);
+
   return (
     <RouterProvider router={router} />
     // <Router>

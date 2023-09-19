@@ -40,7 +40,6 @@ export default function CreateCategory(){
     if(responseinfo.isSuccess){
         toast.success(responseinfo.data.message);
     }
-    console.log(responseinfo)
     
     return(
         <section className={classes.create_post_area}>

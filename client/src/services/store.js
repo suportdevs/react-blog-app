@@ -15,13 +15,4 @@ export const store = configureStore({
         getDefaultMiddleware().concat(authApi.middleware).concat(webApi.middleware)
 });
 
-// Retrieve user data from cookies when the app loads
-// const cookies = await new Cookies();
-// const token = await cookies.get("token");
-
-// if (token) {
-//   console.log(token);
-//   // Assuming your user data is stored as a JSON string in a cookie
-//   store.dispatch(setCurrentUser(token)); // Dispatch setCurrentUser
-// }
 setupListeners(store.dispatch);
