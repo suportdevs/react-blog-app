@@ -2,8 +2,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { authApi } from "./authSlice";
 import { webApi } from "./webSlice";
-import Cookies from "universal-cookie";
-import userSlice, { setCurrentUser } from "./reducer";
+import userSlice from "./reducer";
 
 export const store = configureStore({
     reducer: {

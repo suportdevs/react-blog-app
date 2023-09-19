@@ -4,8 +4,11 @@ import { useGetSinglePostQuery, usePostDeleteMutation } from "../../services/web
 import { FaRegCalendarDays, FaRegEye, FaRegComments, FaRegThumbsUp, FaRegPenToSquare, FaRegTrashCan } from "react-icons/fa6";
 import { toast } from "react-hot-toast";
 import timeFormatter from "../../utilies/timeFormatter";
+import { useSelector } from "react-redux";
 
 export default function PostDetails({id}){
+    const user = useSelector((state) => state.user.user);
+    console.log(user);
     const BACKEND_ROOT_URL = process.env.REACT_APP_BACKEND_URL;
     const [postDelete, responseinfo] = usePostDeleteMutation();
     const {data: post, isFetching, isLoading, isError, isSuccess}=useGetSinglePostQuery(id);
@@ -36,10 +39,16 @@ export default function PostDetails({id}){
                     <div className={classes.post_title}>
                         <h2>{post.title}</h2>
                         <div className={classes.post_title_right}>
+                            {
+                                (user && user.userId === post.author._id)?
+                            (
+                            <>
                             <Link to={`/post/edit/${post._id}`}>
                             <FaRegPenToSquare className={classes.post_title_icon} />
                             </Link>
                             <FaRegTrashCan onClick={() => handlePostDelete(post._id)} className={classes.post_title_icon} />
+                            </>) : ''
+                            }
                         </div>
                     </div>
                     <div dangerouslySetInnerHTML={{ __html: post.content }} />
