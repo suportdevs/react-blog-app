@@ -37,3 +37,18 @@ svg.slick-arrow.slick-prev {
     margin-top: 15px;
     display: inline-block;
 }
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .single_slider{
+        flex-direction: column-reverse;
+    }
+    .single_slider h1{
+        font-size: 20px;
+    }
+}

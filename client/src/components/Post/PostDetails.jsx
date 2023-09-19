@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 
 export default function PostDetails({id}){
     const user = useSelector((state) => state.user.user);
-    console.log(user);
     const BACKEND_ROOT_URL = process.env.REACT_APP_BACKEND_URL;
     const [postDelete, responseinfo] = usePostDeleteMutation();
     const {data: post, isFetching, isLoading, isError, isSuccess}=useGetSinglePostQuery(id);

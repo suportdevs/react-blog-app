@@ -7,12 +7,10 @@ import Cookies from "universal-cookie";
 import { useState } from "react";
 import Canvas from "../Canvas/Canvas";
 import Overlay from "../Overlay/Overlay";
-// import { getCurrentUser } from "../../services/reducer";
 const cookies = new Cookies();
 
 function TopBar() {
-    const token = cookies.get('token');
-    const user = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user.user);
 
     const [dropdownMenu, setDropdownMenu] = useState(false);
     const [canvasOpen, setCanvasOpen] = useState(false);
@@ -48,17 +46,23 @@ function TopBar() {
                             <Link to="post"> <FaTags className={classes.dropdown_menu_item_icon} /> Tags</Link>
                         </div>
                     </li>
+                    {
+                        !user ? (
+                            <>
+                            <li className={classes.menu_item} ><Link to="/login">Login</Link></li>
+                            <li className={classes.menu_item} ><Link to="/register">Register</Link></li>
+                            </>
+                        ) : ''
+                    }
                 </ul>
             </div>
             <div className={classes.rightbar}>
-            <FaSquareFacebook className={classes.rightSearchIcon}/>
+                <FaSquareFacebook className={classes.rightSearchIcon}/>
                 <FaSquareTwitter className={classes.rightSearchIcon}/>
                 <FaLinkedin className={classes.rightSearchIcon}/>
                 <FaMagnifyingGlass className={classes.rightSearchIcon}/>
                 <FaAlignCenter className={classes.rightSearchIcon} onClick={() => setCanvasOpen(!canvasOpen)}/>
-                {/* <div> */}
-                    <img className={classes.topImg} src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" />
-                {/* </div> */}
+                <img className={classes.topImg} src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600w-1714666150.jpg" alt="" />
                 {/* <FaArrowRightFromBracket className={classes.rightSearchIcon} onClick={hangleLogout}/> */}
             </div>
         </div>
