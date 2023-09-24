@@ -1,0 +1,45 @@
+.footer{
+    padding: 50px 80px;
+    background-color: #0b0b0b;
+    color: gray;
+}
+.footer_top{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_top div{
+    display: flex;
+    flex-direction: column;
+}
+.footer_top div a{
+    color: white;
+}
+hr{
+    background-color: gray;
+    margin-top: 50px;
+}
+.footer_bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+}
+.icon{
+    margin-left: 10px;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .footer_top, .footer_bottom{
+        flex-direction: column;
+    }
+    .footer_bottom{
+        text-align: center;
+        justify-content: center;
+    }
+}
