@@ -22,7 +22,7 @@
 .pagination_list_item{
     background-color: #fff;
     border: 1px solid #cbcccf93;
-    padding: 10px;
+    padding: 7px;
     cursor: pointer;
 }
 .pagination_list_item:first-child {

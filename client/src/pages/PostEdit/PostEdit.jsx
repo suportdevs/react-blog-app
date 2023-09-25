@@ -72,7 +72,7 @@ export default function PostEdit(){
                     <div className={classes.input_group}>
                         <label htmlFor="image"><FaPlus className={classes.plus_icon} /></label>
                         <input type="file" name="image" id="image" onChange={(e) => setImage(e.target.files[0])} style={{display: 'none'}} />
-                        <input type="text" name="title" id="title" value={title} onChange={(e) => setTitle(e.target.value)} className={classes.post_input} placeholder="Write a post title..." required/>
+                        <input type="text" name="title" id="title" value={post?.title} onChange={(e) => setTitle(e.target.value)} className={classes.post_input} placeholder="Write a post title..." required/>
                     </div>
                     <div className={classes.input_group}>
                         <select name="category_id" id="category_id" defaultValue={category} onChange={(e) => setCategory(e.target.value)} className={classes.post_input} required>

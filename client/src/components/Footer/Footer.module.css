@@ -2,6 +2,7 @@
     padding: 50px 80px;
     background-color: #0b0b0b;
     color: gray;
+    margin-top: 50px;
 }
 .footer_top{
     display: flex;
@@ -12,7 +13,7 @@
     flex-direction: column;
 }
 .footer_top div a{
-    color: white;
+    color: gray;
 }
 hr{
     background-color: gray;
@@ -26,6 +27,7 @@ hr{
 }
 .icon{
     margin-left: 10px;
+    cursor: pointer;
 }
 
 /* On screens that are 992px or less, set the background color to blue */

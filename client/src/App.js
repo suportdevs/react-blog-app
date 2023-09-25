@@ -1,4 +1,3 @@
-import TopBar from "./components/TopBar/TopBar";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Home from "./pages/Home/Home";
 import SinglePost from "./pages/SinglePost/SinglePost";
@@ -16,6 +15,7 @@ import { setCurrentUser } from "./services/reducer";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
 import Layout from "./pages/Layout/Layout";
+import PostPage from "./pages/PostPage/PostPage";
 
 
 const router = createBrowserRouter([
@@ -25,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/posts",
+        element: <PostPage />,
       },
       {
         path: "/post/:id",

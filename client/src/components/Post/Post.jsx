@@ -26,7 +26,7 @@ function Post ({post}){
                         <li  className={classes.meta_item}><a href=""><FaRegThumbsUp /> 2000</a></li>
                     </ul>
                     <Link to={`/post/${post._id}`}><h2>{post.title}</h2></Link>
-                    <div dangerouslySetInnerHTML={{ __html: post.content.slice(0, 50).concat('…') }} />
+                    <div dangerouslySetInnerHTML={{ __html: post.content.slice(0, 100).concat('…') }} />
                 </div>
             </div>
         </div>

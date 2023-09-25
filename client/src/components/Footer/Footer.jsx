@@ -27,7 +27,7 @@ export default function Footer(){
         </div>
         <hr />
         <div className={classes.footer_bottom}>
-            <span>Copyright ©, 2023, All Rights Reserved</span>
+            <span>Copyright © 2023, All Rights Reserved</span>
             <div>
             <FaSquareFacebook className={classes.icon}/>
                 <FaSquareTwitter className={classes.icon}/>

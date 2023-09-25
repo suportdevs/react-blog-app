@@ -46,11 +46,11 @@ export default function CreatePost(){
     
     if(responseinfo.isError){
         if(Array.isArray(responseinfo.error.data)){
-            responseinfo.error.data.message.map(error => toast.error(error.message));
+            responseinfo.error?.data?.message.map(error => toast.error(error.message));
         }else if(responseinfo.data.message != null && typeof responseinfo.data.message=== 'object'){
-            toast.error(responseinfo.error.data?.message.message);
+            toast.error(responseinfo.error?.data?.message.message);
         }else{
-            toast.error(responseinfo.error.data?.message);
+            toast.error(responseinfo.error?.data?.message);
         }
     }
     if(responseinfo.isSuccess){
