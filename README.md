@@ -28,5 +28,11 @@ In this app performed some actions in fontend and backend part. It's not a compl
 # Screenshots
 
 <div align="center">
-<img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-02-49%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-02-49%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-03-20%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-03-50%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-05-11%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-05-38%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-04-25%20React%20App.png" alt="home" width="100%" >
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-04-18%20React%20App.png" alt="home" width="100%" >
 </div>
