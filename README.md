@@ -24,3 +24,9 @@ In this app performed some actions in fontend and backend part. It's not a compl
 * multer
 * mondb
 * mongoose
+
+# Screenshots
+
+<div align="center">
+<img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-02-49%20React%20App.png" alt="home" width="100%" >
+</div>
