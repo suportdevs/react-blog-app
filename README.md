@@ -33,32 +33,32 @@ In this app performed some actions in fontend and backend part. It's not a compl
 
 </div>
 <div align="center">
-    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-03-20%20React%20App.png" alt="home" width="100%" />
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-03-20%20React%20App.png" alt="canvas and menu" width="100%" />
 
 
 </div>
 <div align="center">
-    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-03-50%20React%20App.png" alt="home" width="100%" />
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-03-50%20React%20App.png" alt="single page" width="100%" />
 
 
 </div>
 <div align="center">
-    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-05-11%20React%20App.png" alt="home" width="100%" />
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-05-11%20React%20App.png" alt="post create page" width="100%" />
 
 
 </div>
 <div align="center">
-    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-05-38%20React%20App.png" alt="home" width="100%" />
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-05-38%20React%20App.png" alt="category create page" width="100%" />
 
 
 </div>
 <div align="center">
-    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-04-25%20React%20App.png" alt="home" width="100%" />
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-04-25%20React%20App.png" alt="sign up page" width="100%" />
 
 
 </div>
 <div align="center">
-    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-04-18%20React%20App.png" alt="home" width="100%" />
+    <img src="https://github.com/suportdevs/react-blog-app/blob/master/Screenshot%202023-09-26%20at%2001-04-18%20React%20App.png" alt="sign in page" width="100%" />
 
 
 </div>
